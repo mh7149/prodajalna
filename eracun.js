@@ -168,7 +168,7 @@ streznik.get('/izpisiRacun/:oblika', function(zahteva, odgovor) {
         odgovor.setHeader('content-type', 'text/xml');
         odgovor.render('eslog', {
           vizualiziraj: zahteva.params.oblika == 'html' ? true : false,
-          narocnik: stranke[zahteva.session.customerId],
+          narocnik: stranke[zahteva.session.customerId - 1],
           postavkeRacuna: pesmi
         })
       })
